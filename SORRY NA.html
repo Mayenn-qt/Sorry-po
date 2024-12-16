@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorry Bebe Time</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 20px;
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        h1, p, h2 {
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            margin: 10px;
+        }
+        #response, #finalLayout, #finalMessage {
+            display: none;
+            font-size: 18px;
+            color: #555;
+        }
+        #finalImage {
+            width: 200px;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- First Layout -->
+<div id="firstLayout">
+    <h1>Sorry na po! </h1>
+    <p> Apin na kita daba, amo ?hehe</p>
+    <button onclick="showSorry()">Yes</button>
+    <button onclick="showSorryResponse()">No</button>
+</div>
+
+<!-- Response Section -->
+<p id="response"></p>
+
+<!-- Final Layout -->
+<div id="finalLayout" style="display: none;">
+    <h2>Bati na kita ha?!</h2>
+    <button onclick="revealBebeMessage()">Click me para bati na</button>
+</div>
+
+<!-- Final Message Layout -->
+<div id="finalMessage" style="display: none;">
+    <h2 style="color: #ff69b4;">Gusto ko na talaga maayos uni hehe</h2>
+    <p><strong>Hi Daba, sorry na nane kung naging busy hehe and I'm ready to make it up to you naman. Sorry na hehe! Tapusa na ina kay ho ayaw na mag para tampoooo, sus man ay mwahh!!</strong></p>
+    <img id="finalImage" src="https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif" alt="Couple Bebe Time">
+</div>
+
+<script>
+    let clickCount = 0;
+
+    function showSorry() {
+        // When "Yes" is clicked, show an apology message
+        document.getElementById("response").innerHTML = "Thank you for understanding mwah";
+        document.getElementById("response").style.display = "block";
+        document.getElementById("firstLayout").style.display = "none";
+        document.getElementById("finalLayout").style.display = "block";
+    }
+
+    function showSorryResponse() {
+        // When "No" is clicked, show an apology message and end the program
+        document.getElementById("response").innerHTML = "Aray ko man! 😭💔";
+        document.getElementById("response").style.display = "block";
+        document.getElementById("firstLayout").style.display = "none";
+    }
+
+    function revealBebeMessage() {
+        // Show the final message and Bebe Time
+        document.getElementById("finalLayout").style.display = "none";
+        document.getElementById("finalMessage").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
